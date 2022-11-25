@@ -1,0 +1,260 @@
+  /* BACKGROUND */
+
+.background-dungeon{
+  z-index: 0;
+  border: 5px red solid;
+  
+  transition: background-image 0.5s;
+  background-image: url(../assets/map.png);
+  background-size: cover;
+  
+  width: 880px;
+  height: 540px;
+
+  border: 6px solid black;
+  border-radius: 18%;
+  box-shadow: 1px 1px 8px black;
+}
+
+.blank-background{
+  width: 100px;
+  height: 100px;
+}
+
+.death-screen{
+  z-index: 4;
+  transition: background-image 8s;
+  background-image: url(../assets/blackScreen.png);
+  position: absolute;
+  width: 98vw;
+  height: 100vh;
+  bottom: 0px;
+  opacity: 80%;
+}
+
+.death-screen button{
+  color: white;
+  z-index: 5;
+  margin-top: 40vh;
+  font-size: 45px;
+  background: none;
+  border: none;
+  font-family: 'MedievalSharp', cursive;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px blue;
+}
+
+.death-screen button div{
+  font-size: 150%;
+  margin-bottom: 50px;
+  text-shadow: 1px 1px 5px red;
+
+}
+
+  
+  
+ 
+  
+  /* PATHS */
+  
+  main .dungeon-paths{
+    text-align: left;
+    position: absolute;
+   
+    width: 680px;
+    height: 440px;
+  }
+
+  /* MAP Buttons */
+  
+.dungeon-paths button{
+  z-index: 3;
+  cursor: pointer;
+  background-size: cover;
+  background-color: transparent;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  border: none;
+
+  transition: transform 0.5s;
+  transition: color 1s;
+  
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px white;
+}
+.dungeon-paths button:hover{
+  transition: transform 0.5s;
+  transform: scale(1.1);
+}
+
+.dungeon-paths #swamp-icon{
+  background-image: url(../assets/swamp-icon.png);
+
+  margin-top: 120px;
+  margin-left: 425px;
+}
+.dungeon-paths #swamp-icon:hover{
+  color: rgb(101, 206, 101);
+}
+
+.dungeon-paths #castle-icon{
+  background-image: url(../assets/castle-icon.png);
+ 
+  width: 80px;
+  height: 80px;
+  margin-top: 155px;
+  margin-left: 108px;
+}
+.dungeon-paths #castle-icon:hover{
+  color: rgb(66, 54, 182);
+}
+
+.dungeon-paths #volcano-icon{
+  background-image: url(../assets/volcano-icon.png);
+
+  width: 120px;
+  margin-top: 24px;
+  margin-left: 455px;
+}
+.dungeon-paths #volcano-icon:hover{
+  color: rgb(173, 4, 4);
+}
+
+.dungeon-paths #village-icon{
+  background-image: url(../assets/village-icon.png);
+
+  margin-top: 292px;
+  margin-left: 430px;
+  width: 162px;
+  height: 145px;
+}
+
+  /* Console */
+
+aside{
+  display: flex;
+  justify-content: center;
+}
+
+  /* Combat Buttons */
+
+.buttons-dungeon{
+  display: flex;
+  justify-content: center;
+}
+  
+nav div button{
+  color: white;
+  width: 150px;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  
+}
+
+nav div .climb-floor{
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  background-color: black;
+  border-radius: 15%;
+  color: white;
+}
+
+nav .melee > button{
+  z-index: 5;
+  position: absolute;
+  top: 620px;
+  box-shadow: 1px 1px 6px ghostwhite, 1px 1px 8px red;
+  background-color: rgba(0, 0, 0, 0.418);
+  border-radius: 5%;
+  text-shadow: 2px 2px 3px red;
+}
+nav .recuar button{
+  position: relative;
+}
+ 
+  /* CHARACTER */
+  
+.character-spot{
+  transition: background-image 0.3s;
+  background-image: url(../assets/blank.png);
+  background-size: cover;
+  
+  z-index: 2;
+  position: absolute;
+  margin-top: 230px;
+  margin-right: 600px;
+  
+  width: 160px;
+  height: 240px;
+}
+  
+  /* ENEMY */
+  
+.enemy-health-bar{
+  position: absolute;
+  margin-top: 20px;
+  background-image: url(../assets/blank.png);
+  width: 100px;
+  height: 80px;
+  font-size: 50px;
+  color: red;
+  text-shadow: 1px 1px 2px white;
+}
+
+
+
+
+
+.mob-spot{
+  position: absolute;
+  margin-left: 300px;
+  bottom: -50px;
+
+  width: 500px;
+  height: 500px;
+}
+
+.mob-spot .flying-spot{
+  background-image: url(../assets/blank.png);
+  transition: background-image 0.5s;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right, top;
+
+  position: relative;
+  margin-left: 60px;
+  bottom: 10px;
+
+  width: 400px;
+  height: 400px
+}
+
+.mob-spot .ground-spot{
+  background-image: url(../assets/blank.png);
+  transition: background-image 0.5s;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right, bottom;
+
+  position: absolute;
+  margin-left: 60px;
+  bottom: 10px;
+
+  width: 400px;
+  height: 400px
+}
+
+
+
+.monster{
+  background-image: url(../assets/blank.png);
+
+}
+

@@ -1,0 +1,398 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND */
+div .torches{
+  position: relative;
+  width: 400px;
+}
+.torches #torch1{
+  position: absolute;
+  size: 25px;
+  max-width: 30px;
+  top: 150px;
+  left: 320px;
+}
+.torches #torch2{
+  position: absolute;
+  size: 25px;
+  max-width: 30px;
+  top: 150px;
+  right: 320px;
+}
+.torches #torch3{
+  position: absolute;
+  size: 25px;
+  max-width: 30px;
+  top: 360px;
+  left: 260px;
+}
+.torches #torch4{
+  position: absolute;
+  size: 25px;
+  max-width: 30px;
+  top: 360px;
+  right: 260px;
+}
+.torches #torch5{
+  position: absolute;
+  size: 25px;
+  max-width: 30px;
+  top: 580px;
+  left: 320px;
+}
+.torches #torch6{
+  position: absolute;
+  size: 25px;
+  max-width: 30px;
+  top: 580px;
+  right: 320px;
+}
+
+  /* Audio */
+audio{
+  position: absolute;
+  bottom: -100px;
+  display: none;
+}
+
+body {
+  background-image: linear-gradient(220deg, black 10%, darkgray 180%, gray);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+  height: 100vh;
+  }
+   
+
+  #app {
+    font-family: 'MedievalSharp', cursive;
+    color: white;
+  }
+  
+/* HEADER */
+  header{
+  font-family: 'MedievalSharp', cursive;
+  
+  color: gray;
+  font-size: 20px;
+
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+
+  padding: 10px;
+  gap: 50px;
+}
+
+
+  /* MAIN */
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0px 0px 10px;
+}
+
+main .village-background{
+  background-image: url(./assets/village.gif);
+  width: 800px;
+  height: 400px;
+  background-size: cover;
+  border: 3px black solid;
+  border-radius: 10%;
+}
+main .heal-statue{
+  position: absolute;
+  background-image: url(./assets/heal-statue.png);
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  margin-top: 185px;
+  margin-left: 65px;
+
+  width: 70px;
+  height: 89.6px;
+}
+
+.heal-statue:hover{
+  transition: transform 0.3s;
+  transform: scale(1.08);
+}
+
+.character-image{
+  background-image: url(./assets/warrior.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  margin-top: 220px;
+  margin-left: 300px;
+  display: flex;
+  width: 90px;
+  height: 150px;
+}
+
+.blank-warrior{
+  width: 100px;
+  height: 100px;
+}
+
+
+  /* ASIDE */
+
+aside{
+  margin: 0 auto;
+}
+
+aside ul{
+  list-style: none;
+  font-size: 14px;
+  font-family: 'MedievalSharp', cursive;
+  padding-top: 6px;
+}
+
+  /* NAV */
+
+.buttons-village{
+  display: inline-flex;
+  justify-content: center;
+  justify-content: space-between;
+  
+  padding: 0 350px;
+  margin: 10px;
+
+  height: 80px;
+}
+
+nav .button button{
+  font-family: 'MedievalSharp', cursive;
+  border: none;
+  background-color: transparent;
+  border-radius: 20%;
+  box-shadow: 2px 2px 4px black,
+  2px 2px 1px darkred ;
+  padding: 7px;
+  cursor: pointer;
+}
+
+
+nav .store{
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  justify-content: center;
+  background-color: transparent;
+}
+
+
+
+/* Buttons */
+
+.ferreiro{
+  width: 200px;
+}
+.ferreiro > button{
+color: rgb(177, 0, 0);
+}
+
+.train{
+  width: 100px;
+}
+.train button{
+  color: #856010;
+}
+
+.alquimia{
+  width: 100px;
+}
+
+.alquimia button{
+  color: chartreuse;  
+}
+
+.rest{
+  width: 200px;
+}
+.rest button{
+  color: darkcyan;
+}
+
+.espadas > button{
+width: 82.75px;
+}
+
+.dungeonC > button {
+  font-size: 27px ;
+  margin: 0px 45px;
+}
+
+  /* Classes */
+
+.console{
+  font-size: 10px;
+ 
+  color: rgb(119, 119, 119);
+  display: block;
+  position: static;
+
+  width: 170px;
+  height: 40px;
+  max-width: 170px;
+  max-height: 40px;
+
+  background-color: rgb(15, 15, 15);
+  border: black solid 2px;
+  border-radius: 2%;
+  box-shadow: 1px 1px 1px black;
+
+  padding: 5px;
+  margin-top: 10px;
+}
+
+
+.swords{
+  display: flex;
+  margin-top: 8px;
+  font-size: 14px;
+  flex-direction: column;
+}
+
+.armors{
+  display: flex;
+  margin-top: 8px;
+  font-size: 14px;
+  flex-direction: column;
+}
+
+.price{
+  margin-top: 4px;
+  margin-bottom: 2px;
+  color: gray;
+  font-size: 10px;
+}
+
+  /* CLASS COLORS */
+
+.sword-wood{
+  color: rgb(155, 76, 24) !important;
+}
+
+.sword-iron{
+  color: gray !important;
+}
+
+.sword-gold{
+  color: gold !important;
+}
+
+.sword-platinum{
+  color: rgb(231, 231, 231) !important;
+}
+
+.sword-diamond{
+  color: #a1eeff !important;
+}
+
+.armor-wood{
+  color: rgb(155, 76, 24) !important;
+}
+
+.armor-iron{
+  color: gray !important;
+}
+
+.armor-gold{
+  color: gold !important;
+}
+
+.armor-platinum{
+  color: rgb(231, 231, 231) !important;
+}
+
+.armor-diamond{
+  color: #a1eeff !important;
+}
+
+
+.messageBox{
+font-family: 'MedievalSharp', cursive;
+font-size: 18px;
+height: 30px;
+color: white;
+}
+
+.hidden{
+display: none !important;
+}
+
+.button-text{
+  text-decoration: none;
+  color: black;
+  margin: 0px 0px;
+}
+
+.button-recuar-text{
+  text-decoration: none;
+  color: black;
+  margin: 0px 0px;
+}
+
+.buttons-admin{
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons-admin button{
+  cursor: pointer;
+  color: gray;
+  width: 100px;
+  border-radius: 15%;
+  border: solid 1px black;
+  background-color: transparent;
+  box-shadow: 1px 1px 5px red, 1px 1px 7px gray;
+}
+
+.buttons-admin button a{
+  color: gray;
+  text-decoration: none;
+}
+.cortado{
+  text-decoration: line-through;
+}
+
+.blank{
+  height: 10px;
+  width: 10px;
+}
+  /* ID's */
+
+#character-status ul{
+  list-style: none;
+  display: flex;
+  padding: 10px;
+  gap: 50px;
+}
+
+#warrior{
+  width: 250px;
+  height: 250px;
+  padding: 25px;
+}
+
+
+
+  /* .NewGame{
+    position: absolute;
+    border: solid 1px red;
+    align-items: center;
+  }
+  .NewGameButton{
+    border: solid 1px rgb(0, 4, 255);
+  } */

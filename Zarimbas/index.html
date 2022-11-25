@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zarimbas RPG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@900&display=swap" rel="stylesheet">  <link rel="stylesheet" href="style.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+  </head>
+  <body onLoad="initialStatus()">
+    
+    <div class="torches">
+      <img id="torch1" src="./assets/torch.gif" alt="">
+      <img id="torch2" src="./assets/torch.gif" alt="">
+      <img id="torch3" src="./assets/torch.gif" alt="">
+      <img id="torch4" src="./assets/torch.gif" alt="">
+    </div>
+
+    <div class="backgroundAudio">
+      <audio controls autoplay loop src="./assets/Medieval Music - Knights of Blackhall (320 kbps).mp3"></audio>
+    </div>
+
+
+    <!-- <div class="new-game">
+      <h1 class="new-game-button">New Game</h1>
+    </div> -->
+
+<div id="app">
+
+
+  <div class="buttons-admin">
+    <!-- Botões Úteis -->
+    <button onclick="
+      getStatus(nameMaxHp, $('.maxHpC').text()), 
+      getStatus(nameHp, $('.currentHpC').text()), 
+  
+      getStatus(nameMaxMana, $('.maxManaC').text()), 
+      getStatus(nameMana, $('.currentManaC').text()), 
+  
+      getStatus(nameAttack, $('.currentAttackC').text()), 
+      getStatus(nameDefense, $('.currentDefenseC').text()), 
+      getStatus(nameMoney, $('.currentMoneyC').text()),
+  
+  
+  
+      console.log('Status capturados')"
+      class="button get-status">Save Game</button>
+    <button onclick="
+      updateStatus(nameMaxHp, maxHp),
+      updateStatus(nameHp, currentHp),
+      
+      updateStatus(nameMaxMana, maxMana),
+      updateStatus(nameMana, currentMana),
+  
+      updateStatus(nameAttack, currentAttack), 
+      updateStatus(nameDefense, currentDefense),
+      updateStatus(nameMoney, currentMoney),
+        console.log('Status distribuídos')">Load Game</button>
+  
+  <button onclick="clearStorage()"><a href="./index.html">RESET GAME (CUIDADO!)</a></button>
+    
+    <button onclick="increaseCurrentMoney(1000)">1000 Zarimbas</button>
+    
+    <button onclick="showStorage()">Ver Status no Console</button>
+      
+    <!-- BOTÃO TESTE -->
+    <button onclick="checkSwords('wood')">checkar espada de madeira</button>
+  
+    <button> <a href="./index.html">Reload Page</a></button>
+  </div>
+
+<!-- HEADER -->
+  
+  <header id="character-status">
+    <ul>
+      <li><span class="nameHp">Vida</span><br><span class="status currentHpC"></span>/<span class="status maxHpC"></span></li>
+      <li><span class="nameMana">Mana</span><br><span class="status currentManaC"></span>/<span class="status maxManaC"></span></li></li>
+      <li><span class="nameAttack">Ataque</span><div class="status currentAttackC"></div></li>
+      <li><span class="nameDefense">Defesa</span><div class="status currentDefenseC"></div></li>
+      <li><span class="nameMoney">Zarimbas</span><div class="status currentMoneyC"></div></li>
+      </li>
+    </ul>
+
+    <div class="none" style="display: none;">
+      <span class="nameMaxHp">VidaMaxima</span>
+      <span class="nameMaxMana">ManaMaxima</span>
+    </div>
+
+
+    </div>
+  </header>
+  
+  <!-- MAIN -->
+
+  <main>
+    <div class="village-background">
+      <button class="heal-statue" onclick="increaseCurrentHp(100)"> <img  class="blank" src="./assets/blank.png" alt="blank"></button>
+      <div class="character-image">
+        <img class="blank" src="./assets/blank.png" alt="blank">
+      </div>  
+    </div>
+  </main>
+
+  <!-- ASIDE -->
+
+  <aside>
+    <div class="console">
+      <ul class="console-text">
+        <li>Vá matar alguma coisa!</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- BUTTONS -->
+
+  <nav class="buttons-village">
+    <div class="button ferreiro">
+      <button onclick="openStore()">Ferreiro</button>
+      <div class="store hidden">
+        <div class="button espadas">
+          <button onclick="applyHidden('swords')">Espadas</button>
+        <div class="swords hidden">
+          <button class="sword-wood" onclick="buySword('wood')">Madeira</button>
+          <p class="price sword">Z$50 <br> +4 ATK</p>
+          <button class="sword-iron" onclick="buySword('iron')">Ferro</button>
+          <p class="price sword">Z$120 <br> +15 ATK</p>
+          <button class="sword-gold" onclick="buySword('gold')">Ouro</button>
+          <p class="price sword">Z$1000 <br> +20 ATK</p>
+          <button class="sword-platinum" onclick="buySword('platinum')">Platina</button>
+          <p class="price sword">Z$5000 <br> +30 ATK</p>
+          <button class="sword-diamond" onclick="buySword('diamond')">Diamante</button>
+          <p class="price sword">Z$10000 <br> +100 ATK</p>
+        </div>
+        </div>
+        <div class="button armaduras">
+          <button onclick="applyHidden('armors')">Armaduras</button>
+          <div class="armors hidden">
+            <button class="armor-wood" onclick="buyArmor('wood')">Madeira</button>
+            <p class="price armor">Z$50 <br> +4 DEF</p>
+            <button class="armor-iron" onclick="buyArmor('iron')">Ferro</button>
+            <p class="price armor">Z$120 <br> +10 DEF</p>
+            <button class="armor-gold" onclick="buyArmor('gold')">Ouro</button>
+            <p class="price armor">Z$1000 <br> +10 DEF</p>
+            <button class="armor-platinum" onclick="buyArmor('platinum')">Platina</button>
+            <p class="price armor">Z$5000 <br> +25 DEF</p>
+            <button class="armor-diamond" onclick="buyArmor('diamond')">Diamante</button>
+            <p class="price armor">Z$10000 <br> +25 DEF</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="button train">
+      <button onclick="">Vazio</button>
+    </div>   
+
+<a class="button-text" href="./Dungeon/dungeon.html">
+<div class="button dungeonC">
+  <button onclick="getAllStatus(),
+  console.log('Status capturados')">Explorar
+  </button>
+</div>
+</a>
+
+
+<div class="button alquimia">
+  <button onclick="openAlchemy()">Alquimia</button>
+  <div class="alchemy hidden">
+    <p>HP Potion</p>
+    <button onclick="usePotion('small')">HP Pequena</button>
+    <button onclick="usePotion('medium')">HP Média</button>
+    <button onclick="usePotion('big')">HP Grande</button>
+    <button onclick="usePotion('huge')">HP Enorme</button>
+  </div>  
+</div>    
+
+
+  <div class="button rest">
+    <button onclick="increaseCurrentHp(100)">Heal</button>
+  </div>
+
+</nav>
+
+
+  <!-- SOURCES -->
+
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+
+<script src="./Dungeon/Classes/spells.js"></script>
+<script src="./Dungeon/Classes/classes.js"></script>
+<script src="./Dungeon/Classes/mobs.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
